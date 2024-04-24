@@ -1,0 +1,49 @@
+.comment {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.text {
+    flex-grow: 1;
+}
+
+.date {
+    flex-grow: 0;
+    color: #888;
+}
+
+.formGroup {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+  
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+}
+  
+.formGroup input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submitButton {
+    
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.submitButton:hover {
+    background-color: #0056b3;
+}

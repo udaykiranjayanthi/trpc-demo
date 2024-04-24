@@ -1,0 +1,27 @@
+.blogList {
+    margin-top: 20px;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .blogItem {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .blogItem h3 {
+    margin-top: 0;
+  }
+  
+  .blogItem p {
+    margin-bottom: 0;
+  }
+  
+  .subTitle {
+    color: #444;
+  }
