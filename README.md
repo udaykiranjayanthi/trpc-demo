@@ -1,4 +1,4 @@
-## tRPC Demo with React, Next.js, and Node.js
+## tRPC Demo with React, and Node.js
 
 This repository showcases a simple demonstration of using tRPC for building APIs with a React and Next.js frontend and a Node.js Express backend.
 
