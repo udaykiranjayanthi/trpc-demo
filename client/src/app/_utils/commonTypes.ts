@@ -20,3 +20,10 @@ export type Comment = {
   text: string;
   createdAt: string;
 };
+
+export type UserDetails = {
+  id: string;
+  name: string;
+  token: string;
+  email: string;
+};

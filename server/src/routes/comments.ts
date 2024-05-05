@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { t } from "../trpc";
+import { router, publicProcedure } from "../trpc";
 import { observable } from "@trpc/server/observable";
 import { z } from "zod";
 import { randomUUID } from "crypto";
@@ -15,8 +15,9 @@ type Comment = {
   createdAt: string;
 };
 
-export const commentsRouter = t.router({
-  onAddComment: t.procedure.subscription((req) => {
+export const commentsRouter = router({
+  // This subscription procedure only works with ws
+  onAddComment: publicProcedure.subscription((req) => {
     // return an `observable` with a callback which is triggered immediately
     return observable<Comment>((emit) => {
       const onAddComment = (comment: Comment) => {
@@ -33,7 +34,7 @@ export const commentsRouter = t.router({
       };
     });
   }),
-  addComment: t.procedure
+  addComment: publicProcedure
     .input(
       z.object({
         blogId: z.string(),
@@ -52,7 +53,7 @@ export const commentsRouter = t.router({
       eventEmitter.emit("addComment", comment);
       return comment;
     }),
-  getAllComments: t.procedure.input(z.string()).query((req) => {
+  getAllComments: publicProcedure.input(z.string()).query((req) => {
     const blogId = req.input;
 
     return comments.filter((comment) => comment.blogId === blogId);

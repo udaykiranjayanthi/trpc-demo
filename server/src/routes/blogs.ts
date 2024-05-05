@@ -1,19 +1,19 @@
-import { t } from "../trpc";
+import { router, publicProcedure } from "../trpc";
 import { z } from "zod";
 import { blogs } from "../data/blogs";
 import { randomUUID } from "crypto";
 import { TRPCError } from "@trpc/server";
 
-export const blogsRouter = t.router({
-  getAllBlogs: t.procedure.query(() => {
+export const blogsRouter = router({
+  getAllBlogs: publicProcedure.query(() => {
     return blogs;
   }),
-  getBlogById: t.procedure.input(z.string()).query((req) => {
+  getBlogById: publicProcedure.input(z.string()).query((req) => {
     const id = req.input;
 
     return blogs.find((blog) => blog.id === id);
   }),
-  createBlog: t.procedure
+  createBlog: publicProcedure
     .input(
       z.object({
         title: z.string(),
@@ -38,7 +38,7 @@ export const blogsRouter = t.router({
       return blog;
     }),
 
-  deleteBlog: t.procedure.input(z.string()).mutation((req) => {
+  deleteBlog: publicProcedure.input(z.string()).mutation((req) => {
     const id = req.input;
 
     const index = blogs.findIndex((blog) => blog.id === id);
@@ -54,7 +54,7 @@ export const blogsRouter = t.router({
     }
   }),
 
-  updateBlog: t.procedure
+  updateBlog: publicProcedure
     .input(
       z.object({
         id: z.string(),
