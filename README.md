@@ -51,7 +51,7 @@ This repository showcases a simple demonstration of using tRPC for building APIs
 
 For a detailed explanation of how this demo utilizes tRPC, including advantages and disadvantages, refer to the following blog post:
 
-[https://medium.com/@udaykiranjayanthi/trpc-building-better-apis-faster-the-type-safe-advantage-76836db4e6f0](link to my  blog)
+[Link to my blog](https://medium.com/@udaykiranjayanthi/trpc-building-better-apis-faster-the-type-safe-advantage-76836db4e6f0)
 
 **Additional Notes:**
 
